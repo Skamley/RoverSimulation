@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "rover/BaseTemplate.html" %}
+{% block body_block %}
+    <h3>Update Environment</h3>
+    <div class="container">
+        <h5 class="text-info"><em>Update Environment here- </em></h5>
+        <br>
+        <div class="container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p  }}
+
+                <input type="submit" value="Submit Here">
+                <input type="submit" onclick="window.location='{% url 'rover:EnvironmentUpdate' %}' ; return false;" value="Cancel">
+            </form>
+        </div>
+
+    </div>
+
+{% endblock%}

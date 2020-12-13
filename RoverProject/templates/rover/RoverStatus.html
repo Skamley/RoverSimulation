@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends "rover/BaseTemplate.html" %}
+{% block body_block %}
+    <h3>Rover Status Update</h3>
+    <div class="container">
+        <h6 class="text-info"><em>This is the Rover Status Page. It displays environment details & rover's updated status. In case of Storm=true it will display message "Cannot move during storm". In case of storm=false it will display the updated location and battery status of the rover</em></h6>
+        <h6 class="text-info"><em>For every 1 step battery level downs by 1 and every 10 successful steps battery gets recharged to 11</em></h6>
+        <h6 class="text-info"><em>Depending on the movement the location of the rover changes</em></h6>
+        <br>
+        <div class="container">
+            {% if storm %}
+            <h5> Cannot move during a storm </h5>
+            <br><br>
+            {% else %}
+            <table>
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td><p class="text-info">Environment</p></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><p class="text-info">Rover</p></td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <p> Temperature:  {{ temperature }} </p>
+                        <p> Humidity: {{ humidity }} </p>
+                        <p> Solar Flare: {{ solar_flare }}</p>
+                        <p> Storm: {{ storm }}</p>
+                        <p> Terrain: {{ terrain }}</p>
+
+                    </td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td>
+                        <p> Horizontal Location: {{ location_horizontal }}</p>
+                        <p> Vertical Location: {{ location_vertical }}</p>
+                        <p> Battery: {{ battery }}</p>
+                        <p> Inventory Quantity: {{ inventory_quantity }}</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            {% endif %}
+            <!-- {% for index in all_envs %}
+
+            <p ><b>Temperature:</b> &nbsp{{temperature}} </p>
+            <p ><b>Humidity:</b> &nbsp{{ humidity }} </p>
+            <p ><b>Solar Flare Status:</b> &nbsp{{ solar_flare }} </p>
+            <p ><b>Storm Status:</b> &nbsp{{ storm }} </p>
+            <p ><b>Terrain:</b> &nbsp{{ terrain }} </p>
+
+            <!-- {% endfor %} -->
+        </div>
+
+    </div>
+
+{% endblock%}

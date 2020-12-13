@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "rover/BaseTemplate.html" %}
+{% block body_block %}
+    <h3>Initial Environment Configuration</h3>
+    <div class="container">
+        <h5 class="text-info"><em>This is initial Environment configuration. To update env go to rover/environment</em></h5>
+        <br>
+        <div class="container">
+            <p> Temperature:  {{ temperature }} </p>
+            <p> Humidity: {{ humidity }} </p>
+            <p> Solar Flare: {{ solar_flare }}</p>
+            <p> Storm: {{ storm }}</p>
+            <p> Terrain: {{ terrain }}</p>
+            <br>
+            <!-- {% for index in all_envs %}
+
+            <p ><b>Temperature:</b> &nbsp{{temperature}} </p>
+            <p ><b>Humidity:</b> &nbsp{{ humidity }} </p>
+            <p ><b>Solar Flare Status:</b> &nbsp{{ solar_flare }} </p>
+            <p ><b>Storm Status:</b> &nbsp{{ storm }} </p>
+            <p ><b>Terrain:</b> &nbsp{{ terrain }} </p>
+
+            <!-- {% endfor %} -->
+        </div>
+
+    </div>
+
+{% endblock%}
