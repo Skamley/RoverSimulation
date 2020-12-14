@@ -24,4 +24,4 @@ To go to Django admin, hit URL- http://127.0.0.1:8000/admin/
 I have given superuser status to user, so one can check the backend models of django's default view
 username- tester, password- rover@20
 
-Github-https://github.com/Skamley/RoverProject
+Github-https://github.com/Skamley/RoverSimulation
